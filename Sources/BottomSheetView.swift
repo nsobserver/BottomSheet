@@ -324,7 +324,7 @@ public final class BottomSheetView: UIView {
             handleView.widthAnchor.constraint(equalToConstant: 35),
             handleView.heightAnchor.constraint(equalToConstant: 4),
 
-            contentView.topAnchor.constraint(equalTo: handleView.bottomAnchor, constant: 8),
+            contentView.topAnchor.constraint(equalTo: handleView.bottomAnchor),
             contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
         ]
