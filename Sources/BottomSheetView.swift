@@ -162,13 +162,19 @@ public final class BottomSheetView: UIView {
     /// - Parameters:
     ///   - view: the container for the bottom sheet view
     ///   - completion: a closure to be executed when the animation ends
-    public func present(in superview: UIView, targetIndex: Int = 0, animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
+    public func present(in superview: UIView,
+                        targetIndex: Int = 0,
+                        includeDimView: Bool = false,
+                        animated: Bool = true,
+                        completion: ((Bool) -> Void)? = nil) {
         guard
             self.superview != superview,
             let height = contentHeights[safe: targetIndex]
         else { return }
 
-        superview.addSubview(dimView)
+        if includeDimView {
+            superview.addSubview(dimView)
+        }
         superview.addSubview(self)
 
         translatesAutoresizingMaskIntoConstraints = false
