@@ -294,9 +294,9 @@ public final class BottomSheetView: UIView {
 
         layer.masksToBounds = false
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.2
+        layer.shadowOpacity = 0.05
         layer.shadowOffset = .zero
-        layer.shadowRadius = 3
+        layer.shadowRadius = UIScreen.main.screenCornerRadius * 3/16
         layer.rasterizationScale = UIScreen.main.scale
         layer.cornerRadius = UIScreen.main.screenCornerRadius
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
