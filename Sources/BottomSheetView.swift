@@ -301,6 +301,8 @@ public final class BottomSheetView: UIView {
         layer.cornerRadius = UIScreen.main.screenCornerRadius
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
 
+        contentView.layer.cornerRadius = UIScreen.main.screenCornerRadius
+
         let handleBackgroundView = handleBackground.view
         handleBackgroundView.layer.cornerRadius = layer.cornerRadius
         handleBackgroundView.layer.maskedCorners = layer.maskedCorners
