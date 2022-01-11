@@ -12,6 +12,7 @@
 		5DAC3BF4256964C60052400F /* HandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAC3BF3256964C60052400F /* HandleView.swift */; };
 		5DAC3BFB256966C50052400F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DAC3BF9256966C50052400F /* Localizable.strings */; };
 		5DAC3C02256967B10052400F /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAC3C01256967B10052400F /* String+Localized.swift */; };
+		AA7A7F24278DB2360067830B /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A7F23278DB2360067830B /* UIScreen+Extensions.swift */; };
 		CF1539C72382F20E001687C1 /* BottomSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1539BD2382F20E001687C1 /* BottomSheet.framework */; };
 		CF1539CC2382F20E001687C1 /* BottomSheetCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1539CB2382F20E001687C1 /* BottomSheetCalculatorTests.swift */; };
 		CF1539CE2382F20E001687C1 /* BottomSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = CF1539C02382F20E001687C1 /* BottomSheet.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -68,6 +69,7 @@
 		5DAC3BF3256964C60052400F /* HandleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleView.swift; sourceTree = "<group>"; };
 		5DAC3BFA256966C50052400F /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = Localizable.strings; sourceTree = "<group>"; };
 		5DAC3C01256967B10052400F /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		AA7A7F23278DB2360067830B /* UIScreen+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extensions.swift"; sourceTree = "<group>"; };
 		CF1539BD2382F20E001687C1 /* BottomSheet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BottomSheet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF1539C02382F20E001687C1 /* BottomSheet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BottomSheet.h; sourceTree = "<group>"; };
 		CF1539C12382F20E001687C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				5DAC3C01256967B10052400F /* String+Localized.swift */,
 				4DB2C6EC27230B6F00C3E559 /* Array+Extensions.swift */,
+				AA7A7F23278DB2360067830B /* UIScreen+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				CF1539FC2382F62A001687C1 /* BottomSheetTransitioningDelegate.swift in Sources */,
 				DA0F4B00238BDB85002DE188 /* TranslationTarget.swift in Sources */,
 				CF1539FF2382F62A001687C1 /* SpringAnimator.swift in Sources */,
+				AA7A7F24278DB2360067830B /* UIScreen+Extensions.swift in Sources */,
 				DACFE66423AC29BE006B352F /* BottomSheetNavigationController.swift in Sources */,
 				CF1539FD2382F62A001687C1 /* BottomSheetView.swift in Sources */,
 			);

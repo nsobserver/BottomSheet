@@ -162,13 +162,19 @@ public final class BottomSheetView: UIView {
     /// - Parameters:
     ///   - view: the container for the bottom sheet view
     ///   - completion: a closure to be executed when the animation ends
-    public func present(in superview: UIView, targetIndex: Int = 0, animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
+    public func present(in superview: UIView,
+                        targetIndex: Int = 0,
+                        includeDimView: Bool = false,
+                        animated: Bool = true,
+                        completion: ((Bool) -> Void)? = nil) {
         guard
             self.superview != superview,
             let height = contentHeights[safe: targetIndex]
         else { return }
 
-        superview.addSubview(dimView)
+        if includeDimView {
+            superview.addSubview(dimView)
+        }
         superview.addSubview(self)
 
         translatesAutoresizingMaskIntoConstraints = false
@@ -288,12 +294,14 @@ public final class BottomSheetView: UIView {
 
         layer.masksToBounds = false
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.2
+        layer.shadowOpacity = 0.05
         layer.shadowOffset = .zero
-        layer.shadowRadius = 3
+        layer.shadowRadius = UIScreen.main.screenCornerRadius * 3/16
         layer.rasterizationScale = UIScreen.main.scale
-        layer.cornerRadius = 16
+        layer.cornerRadius = UIScreen.main.screenCornerRadius
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+
+        contentView.layer.cornerRadius = UIScreen.main.screenCornerRadius
 
         let handleBackgroundView = handleBackground.view
         handleBackgroundView.layer.cornerRadius = layer.cornerRadius
@@ -313,12 +321,12 @@ public final class BottomSheetView: UIView {
             handleBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
             handleBackgroundView.heightAnchor.constraint(equalToConstant: .handleHeight),
 
-            handleView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            handleView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             handleView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            handleView.widthAnchor.constraint(equalToConstant: 25),
+            handleView.widthAnchor.constraint(equalToConstant: 35),
             handleView.heightAnchor.constraint(equalToConstant: 4),
 
-            contentView.topAnchor.constraint(equalTo: handleView.bottomAnchor, constant: 8),
+            contentView.topAnchor.constraint(equalTo: handleView.bottomAnchor),
             contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
         ]
