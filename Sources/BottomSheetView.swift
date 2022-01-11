@@ -298,7 +298,7 @@ public final class BottomSheetView: UIView {
         layer.shadowOffset = .zero
         layer.shadowRadius = 3
         layer.rasterizationScale = UIScreen.main.scale
-        layer.cornerRadius = 16
+        layer.cornerRadius = UIScreen.main.screenCornerRadius
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
 
         let handleBackgroundView = handleBackground.view
