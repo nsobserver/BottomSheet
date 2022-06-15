@@ -126,6 +126,7 @@ public final class BottomSheetView: UIView {
         draggableHeight: CGFloat? = nil,
         useSafeAreaInsets: Bool = false,
         stretchOnResize: Bool = false,
+        userInterfaceStyle: UIUserInterfaceStyle? = nil,
         dismissalDelegate: BottomSheetViewDismissalDelegate? = nil,
         animationDelegate: BottomSheetViewAnimationDelegate? = nil
     ) {
@@ -140,6 +141,8 @@ public final class BottomSheetView: UIView {
         super.init(frame: .zero)
         setup()
         accessibilityViewIsModal = true
+        guard let style = userInterfaceStyle else { return }
+        overrideUserInterfaceStyle = style
     }
 
     public required init?(coder: NSCoder) {

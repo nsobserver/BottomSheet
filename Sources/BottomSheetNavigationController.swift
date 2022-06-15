@@ -15,7 +15,8 @@ open class BottomSheetNavigationController: UINavigationController {
         handleBackground: BottomSheetView.HandleBackground = .color(.clear),
         draggableHeight: CGFloat? = nil,
         useSafeAreaInsets: Bool = false,
-        stretchOnResize: Bool = false
+        stretchOnResize: Bool = false,
+        userInterfaceStyle: UIUserInterfaceStyle? = nil
     ) {
         super.init(rootViewController: rootViewController)
         bottomSheetTransitioningDelegate = BottomSheetTransitioningDelegate(
@@ -23,7 +24,8 @@ open class BottomSheetNavigationController: UINavigationController {
             handleBackground: handleBackground,
             draggableHeight: draggableHeight,
             useSafeAreaInsets: useSafeAreaInsets,
-            stretchOnResize: stretchOnResize
+            stretchOnResize: stretchOnResize,
+            userInterfaceStyle: userInterfaceStyle
         )
         transitioningDelegate = bottomSheetTransitioningDelegate
         modalPresentationStyle = .custom
