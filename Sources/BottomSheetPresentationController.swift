@@ -52,6 +52,7 @@ final class BottomSheetPresentationController: UIPresentationController {
     private let draggableHeight: CGFloat?
     private let stretchOnResize: Bool
     private let userInterfaceStyle: UIUserInterfaceStyle?
+    private let includeDimView: Bool
     private var dismissVelocity: CGPoint = .zero
     private var bottomSheetView: BottomSheetView?
     private var dismissAction: BottomSheetView.DismissAction?
@@ -72,7 +73,8 @@ final class BottomSheetPresentationController: UIPresentationController {
         draggableHeight: CGFloat?,
         useSafeAreaInsets: Bool,
         stretchOnResize: Bool,
-        userInterfaceStyle: UIUserInterfaceStyle?
+        userInterfaceStyle: UIUserInterfaceStyle?,
+        includeDimView: Bool
     ) {
         self.contentHeights = contentHeights
         self.startTargetIndex = startTargetIndex
@@ -83,6 +85,7 @@ final class BottomSheetPresentationController: UIPresentationController {
         self.useSafeAreaInsets = useSafeAreaInsets
         self.stretchOnResize = stretchOnResize
         self.userInterfaceStyle = userInterfaceStyle
+        self.includeDimView = includeDimView
         super.init(presentedViewController: presentedViewController, presenting: presenting)
     }
 
@@ -124,6 +127,7 @@ final class BottomSheetPresentationController: UIPresentationController {
         bottomSheetView?.present(
             in: containerView,
             targetIndex: startTargetIndex,
+            includeDimView: includeDimView,
             animated: false
         )
     }
@@ -170,6 +174,7 @@ final class BottomSheetPresentationController: UIPresentationController {
             useSafeAreaInsets: useSafeAreaInsets,
             stretchOnResize: stretchOnResize,
             userInterfaceStyle: userInterfaceStyle,
+            includeDimView: includeDimView,
             dismissalDelegate: self,
             animationDelegate: animationDelegate
         )
@@ -203,6 +208,7 @@ extension BottomSheetPresentationController: UIViewControllerAnimatedTransitioni
             bottomSheetView?.present(
                 in: transitionContext.containerView,
                 targetIndex: startTargetIndex,
+                includeDimView: includeDimView,
                 completion: completion
             )
         case .dismissing:

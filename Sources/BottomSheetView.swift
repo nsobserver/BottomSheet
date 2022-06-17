@@ -79,6 +79,7 @@ public final class BottomSheetView: UIView {
 
     private let useSafeAreaInsets: Bool
     private let stretchOnResize: Bool
+    private let includeDimView: Bool
     private let contentView: UIView
     private let handleBackground: HandleBackground
     private var topConstraint: NSLayoutConstraint!
@@ -127,6 +128,7 @@ public final class BottomSheetView: UIView {
         useSafeAreaInsets: Bool = false,
         stretchOnResize: Bool = false,
         userInterfaceStyle: UIUserInterfaceStyle? = nil,
+        includeDimView: Bool = true,
         dismissalDelegate: BottomSheetViewDismissalDelegate? = nil,
         animationDelegate: BottomSheetViewAnimationDelegate? = nil
     ) {
@@ -136,6 +138,7 @@ public final class BottomSheetView: UIView {
         self.contentHeights = contentHeights.isEmpty ? [.bottomSheetAutomatic] : contentHeights
         self.useSafeAreaInsets = useSafeAreaInsets
         self.stretchOnResize = stretchOnResize
+        self.includeDimView = includeDimView
         self.dismissalDelegate = dismissalDelegate
         self.animationDelegate = animationDelegate
         super.init(frame: .zero)
@@ -167,7 +170,7 @@ public final class BottomSheetView: UIView {
     ///   - completion: a closure to be executed when the animation ends
     public func present(in superview: UIView,
                         targetIndex: Int = 0,
-                        includeDimView: Bool = false,
+                        includeDimView: Bool = true,
                         animated: Bool = true,
                         completion: ((Bool) -> Void)? = nil) {
         guard
